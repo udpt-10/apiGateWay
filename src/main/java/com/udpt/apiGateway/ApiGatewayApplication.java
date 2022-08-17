@@ -14,7 +14,8 @@ public class ApiGatewayApplication {
 	public RouteLocator myRoutes(RouteLocatorBuilder builder) {
 		return builder.routes()
 				.route(p -> p
-						.path("/customers/all") // add the api path like the example
+						.path("/employee/all", "/employee/findByEmail","/employee/findByUserName",
+								"/employee/addNewEmployee","/employee/editEmployee","/employee/deleteEmployee")
 						.uri("http://localhost:8001")) // it's the service
 				.build();
 	}
