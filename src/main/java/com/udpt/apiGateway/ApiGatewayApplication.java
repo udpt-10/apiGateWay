@@ -17,6 +17,14 @@ public class ApiGatewayApplication {
 						.path("/employee/all", "/employee/findByEmail","/employee/findByUserName",
 								"/employee/addNewEmployee","/employee/editEmployee","/employee/deleteEmployee")
 						.uri("http://localhost:8001")) // it's the service
+				.route(p -> p
+						.path("/OTRequest/all", "/OTRequest/add","/OTRequest/{employeeId}", "/OTRequest/managerId/{managerId}", "/OTRequest/edit", "/OTRequest/delete",
+								"/LeaveRequest/all","/LeaveRequest/add","/LeaveRequest/{employeeId}", "/LeaveRequest/managerId/{managerId}", "/LeaveRequest/edit", "/LeaveRequest/delete",
+								"/WorkFromHome/all", "/WorkFromHome/add", "/WorkFromHome/{employeeId}", "/WorkFromHome/edit","/WorkFromHome/delete",
+								"/GeneralInfo/all", "/GeneralInfo/add", "/GeneralInfo/{generalInfoId}", "/GeneralInfo/edit", "/GeneralInfo/delete",
+								"/SupportRequest/all", "/SupportRequest/allByEmployeeId/{employeeId}", "/SupportRequest/delete", "/SupportRequest/allByDepartment", "/SupportRequest/add", "/SupportRequest/edit", "/SupportRequest/managerId/{managerId}"
+								)
+						.uri("http://localhost:8002"))
 				.build();
 	}
 	public static void main(String[] args) {
