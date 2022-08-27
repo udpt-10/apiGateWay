@@ -15,7 +15,7 @@ public class ApiGatewayApplication {
 		return builder.routes()
 				.route(p -> p
 						.path("/employee/all", "/employee/findByEmail","/employee/findByUserName",
-								"/employee/addNewEmployee","/employee/editEmployee","/employee/deleteEmployee")
+								"/employee/addNewEmployee","/employee/editEmployee","/employee/deleteEmployee", "/employee/login")
 						.uri("http://localhost:8001")) // it's the service
 				.route(p -> p
 						.path("/OTRequest/all", "/OTRequest/add","/OTRequest/{employeeId}", "/OTRequest/managerId/{managerId}", "/OTRequest/edit", "/OTRequest/delete",
